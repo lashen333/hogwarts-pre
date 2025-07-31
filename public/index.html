@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts Championship 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">HOGWARTS CHAMPIONSHIP 2025</h1>
+            <p class="subtitle">Prove your magical prowess across seven legendary challenges</p>
+            
+            <div class="house-selection">
+                <button class="house-btn gryffindor" onclick="selectHouse('gryffindor')">🦁 Gryffindor</button>
+                <button class="house-btn slytherin" onclick="selectHouse('slytherin')">🐍 Slytherin</button>
+                <button class="house-btn ravenclaw" onclick="selectHouse('ravenclaw')">🦅 Ravenclaw</button>
+                <button class="house-btn hufflepuff" onclick="selectHouse('hufflepuff')">🦡 Hufflepuff</button>
+            </div>
+        </div>
+
+        <div class="score-board">
+            <h2>🏆 Championship Progress</h2>
+            <p><strong>House:</strong> <span id="selectedHouse">Select your house first!</span></p>
+            <p><strong>Points:</strong> <span id="totalPoints">0</span> / 890</p>
+            <p><strong>Challenges Completed:</strong> <span id="challengesCompleted">0</span> / 7</p>
+            <div class="lives-container">
+                <span><strong>Lives Remaining:</strong></span>
+                <div id="livesDisplay">
+                    <span class="life">💖</span>
+                    <span class="life">💖</span>
+                    <span class="life">💖</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="challenges-grid" id="challengesGrid">
+            <!-- Challenges will be populated by JavaScript -->
+        </div>
+
+        <div class="final-ceremony" id="finalCeremony">
+            <div class="trophy">🏆</div>
+            <h2>CONGRATULATIONS, CHAMPION!</h2>
+            <p>You have successfully completed all seven challenges of the Hogwarts Championship 2025!</p>
+            <p><strong>Final Score:</strong> <span id="finalScore">0</span> points</p>
+            <p id="championTitle"></p>
+        </div>
+    </div>
+
+    <!-- Elimination Modal -->
+    <div class="elimination-modal" id="eliminationModal">
+        <div class="elimination-content">
+            <div class="elimination-title">💀 ELIMINATED! 💀</div>
+            <div class="elimination-text">
+                <p>You have failed three challenges and have been eliminated from the Hogwarts Championship!</p>
+                <p><strong>The Dark Arts have proven too powerful...</strong></p>
+                <p>But fear not, young wizard! You can always try again to prove your magical worth.</p>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">🔄 Try Again</button>
+        </div>
+    </div>
+
+    <!-- Challenge Modal -->
+    <div class="challenge-modal" id="challengeModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
